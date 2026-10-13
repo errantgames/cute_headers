@@ -264,6 +264,7 @@ struct cute_tiled_object_t
 	float height;                        // Height in pixels. Ignored if using a gid.
 	int id;                              // Incremental id - unique across all objects.
 	cute_tiled_string_t name;            // String assigned to name field in editor.
+	float opacity;                       // Value between 0 and 1. Objects gained this field in a newer Tiled version (previously layer-only).
 	int point;                           // 0 or 1. Used to mark an object as a point.
 
 	// Example to index each vert of a polygon/polyline:
@@ -2083,6 +2084,10 @@ cute_tiled_object_t* cute_tiled_read_object(cute_tiled_map_internal_t* m)
 
 		case 12661511911333414066U: // name
 			cute_tiled_intern_string(m, &object->name);
+			break;
+
+		case 11746902372727406098U: // opacity
+			cute_tiled_read_float(m, &object->opacity);
 			break;
 
 		case 15925463322410838979U: // point
