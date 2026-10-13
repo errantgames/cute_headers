@@ -201,6 +201,7 @@ void cute_tiled_free_external_tileset(cute_tiled_tileset_t* tileset);
 #endif
 
 typedef struct cute_tiled_layer_t cute_tiled_layer_t;
+typedef struct cute_tiled_chunk_t cute_tiled_chunk_t;
 typedef struct cute_tiled_object_t cute_tiled_object_t;
 typedef struct cute_tiled_frame_t cute_tiled_frame_t;
 typedef struct cute_tiled_tile_descriptor_t cute_tiled_tile_descriptor_t;
